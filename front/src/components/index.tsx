@@ -1,0 +1,1 @@
+//juntar todos os components e exportalos
