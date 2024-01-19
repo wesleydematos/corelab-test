@@ -1,7 +1,9 @@
+import { Header } from './components'
+
 function App() {
   return (
     <>
-      <h1>Core notes</h1>
+      <Header/>
     </>
   )
 }

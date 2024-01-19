@@ -1,1 +1,5 @@
-//juntar todos os components e exportalos
+import Header from './Header'
+
+export { 
+  Header
+}
