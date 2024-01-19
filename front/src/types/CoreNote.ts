@@ -1,8 +1,7 @@
 export interface ICoreNote {
-  name: string;
+  title: string;
   description: string;
   favorite: boolean;
-  year: number;
   color: string;
 }
 
