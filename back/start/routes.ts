@@ -24,4 +24,6 @@ Route.group(() => {
   Route.get('/', async () => {
     return { hello: 'world' }
   })
+
+  Route.resource('/core-notes', "CoreNotesController").apiOnly()
 }).prefix('/api')
