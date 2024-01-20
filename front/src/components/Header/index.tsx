@@ -11,7 +11,7 @@ function Header () {
           <p>CoreNotes</p>
         </div>
         <label className='search' htmlFor='notes'>
-          <input type='text' placeholder='pesquisar notas' name='notes' id='notes'/>
+          <input type='text' placeholder='Pesquisar notas' name='notes' id='notes'/>
           <IoSearch />
         </label>
       </div>
