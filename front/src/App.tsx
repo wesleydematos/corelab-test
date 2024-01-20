@@ -1,10 +1,12 @@
-import { Header } from './components'
+import { CreateNote, Header } from './components'
+import './styles/app.sass'
 
 function App() {
   return (
-    <>
-      <Header/>
-    </>
+    <main>
+      <Header />
+      <CreateNote />
+    </main>
   )
 }
 
