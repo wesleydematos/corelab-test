@@ -29,11 +29,11 @@ function CreateNote({ isModified, setIsModified }: ICreateNoteProps) {
 
     try {
       await api.post('', data)
-      toast.success("Note created successfully!")
+      toast.success("Nota criada com sucesso!")
       setIsModified(!isModified)
     } catch (error) {
       console.log(error)
-      toast.error('Error creating note!')
+      toast.error('Erro ao criar nota!')
     }
 
     setIsFavorite(false)
