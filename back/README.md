@@ -42,7 +42,7 @@ npm run dev
 
 ### Índice
 
-- [User](#1-User)
+- [Core Notes](#1-core-notes)
 
 ---
 
