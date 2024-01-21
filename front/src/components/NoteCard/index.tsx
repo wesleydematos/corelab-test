@@ -64,17 +64,21 @@ function NoteCard({ note, setIsModified, isModified }: INoteCardProps) {
 
     try {
       await api.put(`${id}`, data)
+
       setIsEditing(false)
       setIsModified(!isModified)
+
       toast.success('Nota editada com sucesso!')
     } catch (error) {
       console.log(error)
+
       setIsEditing(false)
       setIsChangeColor(false)
       setNoteColor(color)
       setIsFavorite(favorite)
       setInputTitle(title)
       setContent(description)
+
       toast.error('Não foi possível editar a nota!')
     }
   }
@@ -89,15 +93,16 @@ function NoteCard({ note, setIsModified, isModified }: INoteCardProps) {
             type='text'
             placeholder='Título'
             value={inputTitle}
-            onChange={(e) => setInputTitle(e.target.value)}
+            onChange={(e)=> setInputTitle(e.target.value)}
           />
           <img 
             src={isFavotite ? yellowStar : star} 
             alt='star' 
-            onClick={()=>{
+            onClick={()=> {
               if(isFavotite == favorite){ 
                 setIsEditing(true)
               } 
+
               setIsFavorite(!isFavotite)
             }}
           />
@@ -108,7 +113,7 @@ function NoteCard({ note, setIsModified, isModified }: INoteCardProps) {
           style={{backgroundColor: noteColor}}
           placeholder='Edite a nota...'
           value={content}
-          onChange={(e) => setContent(e.target.value)}
+          onChange={(e)=> setContent(e.target.value)}
         />
 
         <div className='editing'>
@@ -129,7 +134,7 @@ function NoteCard({ note, setIsModified, isModified }: INoteCardProps) {
                 />
               </>
               : 
-              <SlPencil onClick={()=>setIsEditing(true)}/>
+              <SlPencil onClick={()=> setIsEditing(true)}/>
             }
             <div 
               onClick={()=> {
@@ -148,7 +153,7 @@ function NoteCard({ note, setIsModified, isModified }: INoteCardProps) {
                   deleteNote()
                 }}
               /> 
-              <VscChromeClose onClick={()=> {setIsDeleting(false);}}/>
+              <VscChromeClose onClick={()=> {setIsDeleting(false)}}/>
             </div>
             : 
             <FaTrashAlt onClick={()=> setIsDeleting(true)} />
@@ -162,7 +167,10 @@ function NoteCard({ note, setIsModified, isModified }: INoteCardProps) {
             return <div 
               key={item} 
               style={{backgroundColor: item}}
-              onClick={()=> {setNoteColor(item); setIsChangeColor(false)}}
+              onClick={()=> {
+                setNoteColor(item) 
+                setIsChangeColor(false)
+              }}
             />
           })}
         </div>

@@ -26,26 +26,40 @@ function App() {
 
   return (
     <main>
-      <Header />
-      <CreateNote setIsModified={setIsModified} isModified={isModified} />
+      <Header 
+        allNotes={allNotes} 
+        setRenderNotes={setRenderNotes}
+      />
+      <CreateNote 
+        setIsModified={setIsModified} 
+        isModified={isModified} 
+      />
       {
         renderNotes.length ? 
         <section className='notes'>
           <h2>Favoritas</h2>
           <ul>
             {renderNotes.map((note: ICoreNoteResponse)=>{
-              if(!!note.favorite) return <NoteCard key={note.id} note={note} setIsModified={setIsModified} isModified={isModified}/> 
+              if(!!note.favorite) return <NoteCard 
+                key={note.id} note={note} 
+                setIsModified={setIsModified} 
+                isModified={isModified}
+              /> 
             })}
           </ul> 
           <h2>Outras</h2>
           <ul>
             {renderNotes.map((note: ICoreNoteResponse)=>{
-              if(!note.favorite) return <NoteCard key={note.id} note={note} setIsModified={setIsModified} isModified={isModified}/> 
+              if(!note.favorite) return <NoteCard 
+                key={note.id} note={note} 
+                setIsModified={setIsModified} 
+                isModified={isModified}
+              /> 
             })}
           </ul> 
         </section>
         : 
-        <div style={{alignSelf: 'center', fontWeight: 'bold', fontSize: '20px'}}>Nenhuma nota foi encontrada! :(</div>
+        <div className='noNotes'>Nenhuma nota foi encontrada! :(</div>
       }
     </main>
   )

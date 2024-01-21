@@ -48,12 +48,12 @@ function CreateNote({ isModified, setIsModified }: ICreateNoteProps) {
           type='text'
           placeholder='Título'
           value={title}
-          onChange={(e) => setTitle(e.target.value)}
+          onChange={(e)=> setTitle(e.target.value)}
         />
         <img 
           src={isFavotite ? yellowStar : star} 
           alt='star' 
-          onClick={()=>setIsFavorite(!isFavotite)}
+          onClick={()=> setIsFavorite(!isFavotite)}
         />
       </div>
       <div className='submiting'>
@@ -61,7 +61,7 @@ function CreateNote({ isModified, setIsModified }: ICreateNoteProps) {
           type='text'
           placeholder='Criar nota...'
           value={content}
-          onChange={(e) => setContent(e.target.value)}
+          onChange={(e)=> setContent(e.target.value)}
         />
         <button type='submit'>
           <IoIosSend />
