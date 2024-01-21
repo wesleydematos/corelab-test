@@ -15,6 +15,7 @@ header
     align-items: center
   svg
     color: #9E9E9E
+    cursor: pointer
 
 .logo-content 
   gap: 15px
@@ -31,15 +32,13 @@ header
   justify-content: space-between
   width: 45vw
   margin-left: 15px
-  border: 2px solid #D9D9D9
+  border: 2px solid $gray-light
   padding: 5px
   border-radius: 5px
   input
     width: calc( 100% - 20px )
     font-size: 9px
     font-weight: 400
-  svg
-    cursor: pointer
 
 @include desktop 
   header > svg
