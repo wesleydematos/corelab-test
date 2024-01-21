@@ -1,0 +1,42 @@
+@import '../../styles/variables'
+  
+li
+  width: 70vw
+  height: 390px
+  max-width: 390px
+  border: 1px solid $gray-light
+  border-radius: 25px
+  list-style: none
+  form
+    display: flex
+    flex-direction: column
+    border: none
+    > textarea
+      align-self: center
+      overflow-y: auto
+      margin-top: 10px
+      height: 300px
+      width: 95%
+      padding: 2px
+      border: none
+      resize: none
+      box-sizing: border-box  
+      word-wrap: break-word
+
+.title
+  padding: 10px
+  border-bottom: 1px solid $gray-light
+  input
+    width: calc( 100% - 20px )
+    color: black
+    font-size: 14px
+    font-weight: 700
+
+.editing
+  padding: 5px 12px
+  display: flex
+  justify-content: space-between
+  div
+    display: flex
+    gap: 5px
+    font-weight: bold

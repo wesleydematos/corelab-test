@@ -1,13 +1,18 @@
 import { useState, FormEvent } from 'react'
 import { toast } from 'react-toastify'
 import { IoIosSend } from 'react-icons/io'
-import star from '../../imgs/star.png'
-import yellowStar from '../../imgs/yellowstar.png'
-import './createNote.sass'
 import { ICoreNote } from '../../types/CoreNote'
 import { api } from '../../lib/api'
+import yellowStar from '../../imgs/yellowstar.png'
+import star from '../../imgs/star.png'
+import './createNote.sass'
 
-function CreateNote() {
+interface ICreateNoteProps {
+  isModified: boolean
+  setIsModified: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+function CreateNote({ isModified, setIsModified }: ICreateNoteProps) {
   const [isFavotite, setIsFavorite] = useState(false)
   const [title, setTitle] = useState('')
   const [content, setContent] = useState('')
@@ -25,6 +30,7 @@ function CreateNote() {
     try {
       await api.post('', data)
       toast.success("Note created successfully!")
+      setIsModified(!isModified)
     } catch (error) {
       console.log(error)
       toast.error('Error creating note!')
@@ -36,7 +42,7 @@ function CreateNote() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className='form'>
       <div className='divider'>
         <input
           type='text'
